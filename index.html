@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OldSchool Forum</title>
+
+    <!-- 
+        daisyUI and tailwind connection
+     -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 
+        google font
+     -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .mulish-font {
+        font-family: "Mulish", sans-serif;
+      }
+      .inter-font {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="mulish-font text-[#12132D]">
+    <!-- 
+        header section
+     -->
+    <header class="max-w-[1170px] mx-auto">
+      <!-- 
+            navbar
+         -->
+      <nav class="my-8">
+        <div class="navbar bg-base-100">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box space-y-1"
+              >
+                <li class="tooltip" data-tip="Home">
+                  <a
+                    class="bg-[#12132D08] rounded-full py-3 border border-gray-300"
+                    ><img src="images/Frame.svg" alt=""
+                  /></a>
+                </li>
+                <li class="tooltip" data-tip="Edit">
+                  <a
+                    class="bg-[#12132D08] rounded-full py-3 border border-gray-300"
+                    ><img src="images/Frame2.svg" alt=""
+                  /></a>
+                </li>
+                <li class="tooltip" data-tip="Add">
+                  <a
+                    class="bg-[#12132D08] rounded-full py-3 border border-gray-300"
+                    ><img src="images/Frame3.svg" alt=""
+                  /></a>
+                </li>
+                <li class="tooltip" data-tip="Flag">
+                  <a
+                    class="bg-[#12132D08] rounded-full py-3 border border-gray-300"
+                    ><img src="images/Frame4.svg" alt=""
+                  /></a>
+                </li>
+              </ul>
+            </div>
+            <h1 class="lg:text-4xl text-2xl font-black">OldSchool</h1>
+          </div>
+
+          <div class="navbar-end">
+            <div class="navbar-center hidden lg:flex lg:pl-64">
+              <ul class="menu menu-horizontal px-1 space-x-3">
+                <li class="tooltip" data-tip="Home">
+                  <a
+                    class="bg-[#12132D08] rounded-full p-4 border border-gray-300"
+                    ><img src="images/Frame.svg" alt=""
+                  /></a>
+                </li>
+                <li class="tooltip" data-tip="Edit">
+                  <a
+                    class="bg-[#12132D08] rounded-full p-4 border border-gray-300"
+                    ><img src="images/Frame2.svg" alt=""
+                  /></a>
+                </li>
+                <li class="tooltip" data-tip="Add">
+                  <a
+                    class="bg-[#12132D08] rounded-full p-4 border border-gray-300"
+                    ><img src="images/Frame3.svg" alt=""
+                  /></a>
+                </li>
+                <li class="tooltip" data-tip="Flag">
+                  <a
+                    class="bg-[#12132D08] rounded-full p-4 border border-gray-300"
+                    ><img src="images/Frame4.svg" alt=""
+                  /></a>
+                </li>
+              </ul>
+            </div>
+
+            <a
+              class="btn bg-[#797DFC] rounded-[50px] text-white text-xl font-bold lg:px-10 ml-3 lg:h-14"
+              >Sign In</a
+            >
+          </div>
+        </div>
+      </nav>
+
+      <!-- 
+        header hero
+       -->
+
+      <section class="m-3 lg:m-0">
+        <div
+          class="bg-[url('images/bgbanner.png')] bg-[#12132D] bg-no-repeat bg-center lg:min-h-[550px] rounded-[32px] bg-cover w-full flex lg:flex-row items-center justify-center p-5"
+        >
+          <div
+            class="flex flex-col lg:flex-row items-center justify-center gap-10"
+          >
+            <!-- left -->
+            <div class="lg:space-y-8 space-y-2 lg:text-left text-center">
+              <h1 class="text-white text-xl lg:text-4xl font-extrabold">
+                Welecome to the
+              </h1>
+              <h1 class="text-white text-xl lg:text-6xl font-extrabold">
+                <span class="text-[#797DFC]">OldSchool</span> Forum
+              </h1>
+              <p class="lg:text-xl lg:font-medium text-white">
+                OldSchool gives you the best aesthetiic vibe <br />in every steps!
+              </p>
+              <label
+                id="label"
+                class="input input-bordered flex items-center rounded-full"
+              >
+                <input
+                  id="search-field"
+                  type="text"
+                  class="grow rounded-[32px]"
+                  placeholder="Search here anything"
+                />
+                <button
+                  onclick="searchFunction()"
+                  id="search-btn"
+                  class="btn bg-[#797DFC] rounded-[32px]"
+                >
+                  Search
+                </button>
+              </label>
+            </div>
+
+            <!-- right -->
+            <div
+              class="bg-white rounded-3xl flex items-center justify-center lg:text-2xl p-3 lg:p-12"
+            >
+              <table class="font-medium">
+                <tr>
+                  <td class="lg:pr-14">Registered Users</td>
+                  <td>01</td>
+                </tr>
+
+                <tr>
+                  <td>Forum</td>
+                  <td>05</td>
+                </tr>
+
+                <tr>
+                  <td>Topics</td>
+                  <td>01</td>
+                </tr>
+                <tr>
+                  <td>Replies</td>
+                  <td>01</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <!-- 
+        main section
+     -->
+    <main class="max-w-[1170px] lg:mx-auto mx-3">
+      <!-- 
+            lets discuss section
+         -->
+
+      <section class="my-14">
+        <div class="text-center space-y-3 mb-7">
+          <h1 class="font-extrabold text-3xl">Let's Discuss</h1>
+          <p class="text-lg font-normal opacity-50">
+            Post unlimited joy of yours experience. Because its give the best joy <br />
+            along with the life line .
+          </p>
+        </div>
+
+        <!-- spinner  -->
+        <div id="spinner" class="text-center mb-44 hidden">
+          <span class="loading loading-bars loading-lg"></span>
+        </div>
+        <!-- api section -->
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- left -->
+          <div id="card-container" class="lg:col-span-2 space-y-6">
+            <!-- card -->
+          </div>
+
+          <!-- right  -->
+          <div class="lg:col-span-1">
+            <div class="bg-[#F3F3F5] rounded-3xl p-6">
+              <div class="flex justify-between mb-3">
+                <h3 class="text-xl font-bold">Title</h3>
+                <div class="flex">
+                  <img src="images/tick.svg" alt="" />
+                  <p>Mark as read &#40;<span id="count">0</span>&#41; .</p>
+                </div>
+              </div>
+  
+              <!-- mark as div container  -->
+              <div id="mark-as-div-container" class="space-y-3"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 
+        join our forum section
+       -->
+
+      <section
+        class="bg-[#12132D] flex flex-col lg:flex-row rounded-2xl items-center justify-center p-5"
+      >
+        <div class="space-y-4 text-white">
+          <h2 class="text-4xl font-black">Join Our forum</h2>
+          <p>
+            Share your favorite opinion and win and wp forum coffee mug! Yes,
+            you can <br />
+            run unit tests and view the results directly within the app.
+          </p>
+          <button class="btn bg-[#797DFC] text-white">Registerd Now</button>
+        </div>
+        <div>
+          <img src="images/joinforum.png" alt="" />
+        </div>
+      </section>
+
+      <!-- 
+        latest post section
+       -->
+      <section>
+        <div class="text-center space-y-3 m-16">
+          <h1 class="font-extrabold text-3xl">Latest Posts</h1>
+          <p class="text-lg font-normal opacity-50">
+            Yes, you can run unit tests and view the results directly within the
+            app. The <br />
+            integrated testing features allow for a streamlined .
+          </p>
+        </div>
+
+        <!-- spinner -->
+        <div id="spinner2" class="text-center mb-44 hidden">
+          <span class="loading loading-bars loading-lg"></span>
+        </div>
+
+        <div
+          id="latestPost-card-container"
+          class="grid grid-cols-1 lg:grid-cols-3 gap-6"
+        >
+          <!-- card -->
+        </div>
+      </section>
+    </main>
+
+    <!-- 
+      footer
+     -->
+    <footer class="bg-[#F3F3F5] py-28 mt-16">
+      <div
+        class="space-y-5 flex flex-col items-center justify-center text-center max-w-[1170px] mx-auto"
+      >
+        <h1 class="text-4xl font-black">OldSchool</h1>
+        <p class="opacity-75">
+          Enjoy your limitless enjoyment with old <br />
+          school vibe and there are lot of features you will love to do with
+          action.
+        </p>
+        <img src="images/Social.svg" alt="" />
+        <hr class="border opacity-85 w-full" />
+        <p class="opacity-50">2024, All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- 
+      script files
+     -->
+    <script src="js/index.js"></script>
+    <script src="js/latestPost.js"></script>
+  </body>
+</html>
